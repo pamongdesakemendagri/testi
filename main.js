@@ -6,7 +6,7 @@ import {get} from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.6/croot.js";
 hide("tombol");
 get("https://mrt.ulbi.ac.id/notif/ux/getlaporan/"+getHash(),runafterGet)
 
-document.getElementsByName("rating").onchange = function() {runOnChangeRating()};
+document.getElementsByName("rating").onclick  = function() {runOnRating()};
 
 function runafterGet(result){
     console.log(result);
@@ -14,7 +14,7 @@ function runafterGet(result){
     setInner("solusi",result.solusi);
 }
 
-function runOnChangeRating(){
+function runOnRating(){
     let pil=getValueRadio("rating");
     console.log(pil);
     show("tombol");
