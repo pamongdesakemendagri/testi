@@ -16,5 +16,4 @@ function runafterGet(result){
 function runOnRating(){
     let pil=getValueRadio("rating");
     console.log(pil);
-    show("tombol");
 }
