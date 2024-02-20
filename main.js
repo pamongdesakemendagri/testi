@@ -14,6 +14,16 @@ function runafterGet(result){
 }
 
 function runOnRating(){
-    let pil=getValueRadio("rating");
-    console.log(pil);
+    let datarating={
+        _id:getHash(),
+        rating:Number(getValueRadio("rating")),
+        komentar:getValueRadio("komentar")
+    }
+    hide("feedback");
+    postWithToken("https://mrt.ulbi.ac.id/notif/ux/postrating","login",getCookie("login"),datarating,responseFunction);
+}
+
+function responseFunction(result){
+    console.log(result);
+
 }
