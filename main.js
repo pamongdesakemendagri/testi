@@ -6,7 +6,7 @@ get("https://mrt.ulbi.ac.id/notif/ux/getlaporan/"+getHash(),runafterGet)
 
 function runafterGet(result){
     console.log(result);
-    setInner("nama",result.petugas);
+    setInner("petugas",result.petugas);
     setInner("solusi",result.solusi);
     let pil=getValueRadio("rating");
     console.log(pil);
