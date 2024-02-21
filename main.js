@@ -15,7 +15,7 @@ function runafterGet(result){
 
 function runOnRating(){
     let datarating={
-        _id:getHash(),
+        id:getHash(),
         rating:Number(getValueRadio("rating")),
         komentar:getValueRadio("komentar")
     }
