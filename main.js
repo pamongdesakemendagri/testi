@@ -20,11 +20,12 @@ function runOnRating(){
         rating:Number(getValueRadio("rating")),
         komentar:getValue("komentar")
     }
-    hide("feedback");
+    setInner("feedback","Mohon tunggu sebentar data sedang dikirim");
     postWithToken("https://mrt.ulbi.ac.id/notif/ux/postrating","login",getCookie("login"),datarating,responseFunction);
 }
 
 function responseFunction(result){
     console.log(result);
+    setInner("feedback","Feedback berhasil dikirim terima kasih. "+result.wa);
 
 }
