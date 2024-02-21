@@ -1,6 +1,7 @@
 import {getValueRadio,setInner,onClick,hide,show} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.5/croot.js";
 import {getHash} from "https://cdn.jsdelivr.net/gh/jscroot/url@0.0.9/croot.js";
 import {get,postWithToken} from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.6/croot.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
 
 
 get("https://mrt.ulbi.ac.id/notif/ux/getlaporan/"+getHash(),runafterGet)
