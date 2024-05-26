@@ -26,6 +26,6 @@ function runOnRating(){
 
 function responseFunction(result){
     console.log(result);
-    setInner("feedback","Feedback berhasil dikirim terima kasih. "+result.wa);
+    setInner("feedback","Feedback berhasil dikirim terima kasih. "+result.info);
 
 }
