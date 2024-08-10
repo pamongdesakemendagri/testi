@@ -4,24 +4,36 @@ import {get,postWithToken} from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.6/c
 import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
 
 
-get("https://api.do.my.id/notif/ux/getlaporan/"+getHash(),runafterGet)
+get("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/peserta/sent/"+getHash(),runafterGet)
 
 onClick("tombol",runOnRating);
 
 function runafterGet(result){
     console.log(result);
-    setInner("petugas",result.petugas);
-    setInner("solusi",result.solusi);
+    setInner("petugas",result.fullname);
+    setInner("solusi",result.desa);
 }
 
 function runOnRating(){
-    let datarating={
-        id:getHash(),
-        rating:Number(getValueRadio("rating")),
-        komentar:getValue("komentar")
+    let rating = getValueRadio("rating");
+    let komentar = getValue("komentar");
+
+    if (!rating || komentar.trim() === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Rating dan komentar tidak boleh kosong.'
+        });
+        return;
     }
+
+    let datarating = {
+        id: getHash(),
+        rating: Number(rating),
+        komentar: komentar
+    };
     setInner("feedback","Mohon tunggu sebentar data sedang dikirim");
-    postWithToken("https://api.do.my.id/notif/ux/postrating","login",getCookie("login"),datarating,responseFunction);
+    postWithToken("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/peserta/unsubscribe","login",getCookie("login"),datarating,responseFunction);
 }
 
 function responseFunction(result){
