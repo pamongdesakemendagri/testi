@@ -38,6 +38,6 @@ function runOnRating(){
 
 function responseFunction(result){
     console.log(result);
-    setInner("feedback","Feedback berhasil dikirim terima kasih. "+result.info);
+    setInner("feedback","Anda telah berhenti berlangganan informasi dari kami, terima kasih kak "+result.info);
 
 }
