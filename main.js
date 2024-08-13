@@ -10,7 +10,7 @@ onClick("tombol",runOnRating);
 onClick("bantuan",runOnHelpdesk);
 
 function runOnHelpdesk(){
-    redirect('https://wa.me/pamongdesa?text=bantuan+admin');
+    redirect('https://wa.me/6281510040020?text=bantuan+admin');
 
 }
 
