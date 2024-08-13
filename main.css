@@ -145,9 +145,21 @@
     font-size: 16px;
     margin: 20px 2px;
     cursor: pointer;
-    background-color: #04AA6D;
+    background-color: #aa0404;
   }
 
+  .buttonhelpdesk {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    background-color: #04AA6D;
+  }
   .solusi {
     margin-top: 20px; /* Ganti nilai ini sesuai dengan kebutuhan Anda */
   }
