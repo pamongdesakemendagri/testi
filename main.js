@@ -10,7 +10,7 @@ onClick("tombol",runOnRating);
 onClick("bantuan",runOnHelpdesk);
 
 function runOnHelpdesk(){
-    redirect('https://wa.me/6281510040020?text=bantuan+admin');
+    redirect('https://api.whatsapp.com/send/?phone=6281510040020&text=bantuan+admin&type=phone_number&app_absent=0');
 
 }
 
