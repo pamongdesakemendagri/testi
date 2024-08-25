@@ -4,7 +4,7 @@ import {getJSON,postJSON} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/ap
 import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
 
 
-getJSON("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/user/",'login',getCookie('login'),runafterGet)
+getJSON("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/user/",'login',getCookie('login'),runafterGet);
 
 onClick("tombol",runOnRating);
 onClick("bantuan",runOnHelpdesk);
@@ -16,8 +16,13 @@ function runOnHelpdesk(){
 
 function runafterGet(result){
     console.log(result);
-    setInner("petugas",result.fullname);
-    setInner("solusi",result.desa);
+    if (result.status===200){
+        setInner("petugas",result.data.data.fullname);
+        setInner("solusi",result.data.data.village);
+    }else{
+        redirect('/');
+    }
+    
 }
 
 function runOnRating(){
@@ -34,16 +39,19 @@ function runOnRating(){
     }
 
     let datarating = {
-        id: getHash(),
         rating: Number(rating),
         komentar: komentar
     };
     setInner("feedback","Mohon tunggu sebentar data sedang dikirim");
-    postWithToken("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/peserta/unsubscribe","login",getCookie("login"),datarating,responseFunction);
+    postJSON("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/testi","login",getCookie("login"),datarating,responseFunction);
 }
 
 function responseFunction(result){
     console.log(result);
-    setInner("feedback","Anda telah berhenti berlangganan informasi dari kami, terima kasih kak "+result.info);
+    if (result.status===200){
+        setInner("feedback","Terima kasih Bapak/Ibu "+result.data.info+" atas testimoni yang diberikan.");
+    }else{
+        setInner("feedback","Gagal mengirimkan data "+toString(result.status));
+    }
 
 }
