@@ -133,7 +133,7 @@ textarea {
 }
 
 .button:hover {
-    background-color: var(--bs-primary-hover);
+    background-color: var(--bs-primary);
 }
 
 /* Footer */
