@@ -16,7 +16,6 @@ onClick("bantuan",runOnHelpdesk);
 
 function runOnHelpdesk(){
     redirect('https://api.whatsapp.com/send/?phone=6281510040020&text=bantuan+admin&type=phone_number&app_absent=0');
-
 }
 
 function runafterGet(result){
@@ -25,7 +24,8 @@ function runafterGet(result){
         setInner("petugas",result.data.data.fullname);
         setInner("solusi",result.data.data.village);
     }else{
-        redirect('/');
+        console.log(result.data);
+        //redirect('/');
     }
     
 }
