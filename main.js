@@ -1,10 +1,10 @@
 import {getValueRadio,setInner,onClick,hide,show,getValue} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.5/croot.js";
 import {getHash,redirect} from "https://cdn.jsdelivr.net/gh/jscroot/url@0.0.9/croot.js";
-import {get,postWithToken} from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.6/croot.js";
+import {getJSON,postJSON} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/api.js";
 import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
 
 
-get("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/peserta/sent/"+getHash(),runafterGet)
+getJSON("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/user/",'login',getCookie('login'),runafterGet)
 
 onClick("tombol",runOnRating);
 onClick("bantuan",runOnHelpdesk);
