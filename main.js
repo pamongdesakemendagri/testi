@@ -3,8 +3,10 @@ import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/url@0.0.9/croot.js";
 import {getJSON,postJSON} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/api.js";
 import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
 
+
+console.log(getCookie("login"));
 if (getCookie("login")===""){
-    redirect("/");
+    //redirect("/");
 }
 
 getJSON("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/user/",'login',getCookie('login'),runafterGet);
