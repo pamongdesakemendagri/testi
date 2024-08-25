@@ -24,7 +24,7 @@ function runafterGet(result){
         setInner("solusi",result.data.data.village);
     }else{
         console.log(result.data);
-        //redirect('/');
+        redirect('/');
     }
     
 }
