@@ -9,7 +9,7 @@ if (getCookie("login")===""){
     //redirect("/");
 }
 
-getJSON("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/user/",'login',getCookie('login'),runafterGet);
+getJSON("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/user",'login',getCookie('login'),runafterGet);
 
 onClick("tombol",runOnRating);
 onClick("bantuan",runOnHelpdesk);
